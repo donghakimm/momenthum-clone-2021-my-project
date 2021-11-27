@@ -1,0 +1,274 @@
+*app.js
+
+console.log(54545454);
+console.log("lalalal");
+
+const a = 5;
+const b = 2;
+const myName = "nico";
+
+let a = 5;
+
+const player = {
+    name: "nico",
+    points: 10;
+    fat: true,
+};
+
+console.log(player);
+player.points = player.points + 15;
+console.log(player.points);
+
+/*---------------Arrays-------------------------*/
+const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+const nonsense = [1, 2, "hello", false, null, true, undefined, "nico];
+
+// 0, 1, 2, 3, 4, 5, ....
+console.log(daysOfWeek[5]);
+
+// Add one more day to the Array
+daysOfWeek.push("sun");
+
+/*---------------Function-------------------------*/
+function sayHello(nameOfPerson, age) {
+    console.log("Hello my name is " + nameOfPerson + " and I'm  " + age);
+}
+
+sayHello("nico", 10);
+
+const player = {
+    name: "nico",
+    sayHello: function(otherPersonName) {
+        console.log("hello! " + otherPersonName + " nice to meet you!");
+        },
+    };
+};
+
+console.log(player.name);
+player.sayHello("lynn");
+
+
+/*---------------Return-------------------------*/
+const age = 96;
+function calculateKrAge(ageOfForeigner){
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
+
+
+parseInt <- change string to numeric
+parseInt("15");
+
+/*---------------Ch3.------------------------*/
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Momentum</title>
+    </head>
+    <body>
+          <div class="hello">
+              <h1>Click me!</h1>
+            </div>
+        <script src="app.js"></script>
+    </body>
+</html>
+--------------------------------
+
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+   if (h1.className==="active") {
+       h1.className = "";
+    } else {
+        h1.className = "active";
+    }
+}
+
+h1.addEventListener("click", handleTitleClick);
+
+---------------------------
+---------------------------
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Momentum</title>
+    </head>
+    <body>
+          <div class="hello">
+              <h1 class="sexy-font">Click me!</h1>
+            </div>
+        <script src="app.js"></script>
+    </body>
+</html>
+-----------------------------
+body {
+  background-color: beige;
+}
+
+h1 {
+  color: cornflowerblue;
+  transition: color 0.5s ease-in-out;
+}
+
+.clicked {
+  color: tomato;
+}
+
+.sexy-font {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+------------------------------
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+    const clickedClass = "clicked";
+   if (h1.classList.contains(clickedClass)) {
+       h1.classList.remove(clickedClass);
+    } else {
+        h1.classList.add(clickedClass);
+    }
+}
+
+h1.addEventListener("click", handleTitleClick);
+-----------------------------------
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+   h1.classList.toggle("clicked");
+}
+
+h1.addEventListener("click", handleTitleClick);
+
+-----------------------Ch4.----------------------------------------
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+
+<=>
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+-------------------------------------------
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+
+function onLoginBtnClick() {
+    const username = loginInput.value;
+    if (username=="") {
+        alert("Please write your name");
+    } else if(username.length > 15) {
+        alert("Your name is too long.")
+    }
+}
+
+
+loginButton.addEventListener("click", onLoginBtnClick)
+------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Momentum App</title>
+    </head>
+    <body>
+        <form id=login-form>
+            <input required maxlength="15" type="text" placeholder="What is your name?" />
+            <button>Log In</button>
+        </form>
+        <script src="app.js"></script>
+    </body>
+</html>
+--------------------------------------------
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+
+const link= document.querySelector("a");
+
+function onLoginSubmit(event) {
+    event.preventDefault();
+    console.log(loginInput.value);
+}
+
+function handleLinkClick(event){
+    event.preventDefault();
+    console.dir(event);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click",handleLinkClick);
+---------------------------
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Momentum App</title>
+    </head>
+    <body>
+        <form class="hidden" id="login-form">
+            <input required maxlength="15" type="text" placeholder="What is your name?" />
+            <button>Log In</button>
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+        <script src="app.js"></script>
+    </body>
+</html>
+-------------------
+.hidden {
+  display: none;
+}
+
+--------------------
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    paintGreetings(username);
+}
+
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);    
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+console.log(savedUsername)
+
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(savedUsername);  
+}
+------------------------ch5.-----------------------
+const clock = document.querySelector("h2#clock");
+
+function sayHello() {
+    console.log("hello");
+}
+
+//setInterval(sayHello, 5000);
+setTimeout(sayHello, 5000);

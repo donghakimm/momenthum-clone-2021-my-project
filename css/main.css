@@ -1,0 +1,24 @@
+#main-screen {
+  color: white;
+  position: relative;
+}
+
+#momentum-screen-cover {
+  margin-top: 50px;
+}
+#momentum-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#clock {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+#greeting {
+  font-size: 50px;
+  margin-bottom: 15px;
+}

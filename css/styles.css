@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+@import "reset.css";
+@import "variables.css";
+@import "login.css";
+@import "main.css";
+@import "paint.css";
+@import "screen-header.css";
+@import "weather.css";
+@import "todo.css";
+@import "nav-screen.css";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.hidden {
+  display: none;
+}

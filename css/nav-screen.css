@@ -1,0 +1,139 @@
+#nav-screen {
+  width: 100%;
+  margin: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 10px;
+}
+
+#nav-screen__column:last-child {
+  margin-right: 50px;
+}
+
+@keyframes shakeHeadphone {
+  0% {
+    transform: translate(0px, 0.5px) rotate(10deg);
+  }
+  10% {
+    transform: translate(0px, 1px) rotate(-10deg);
+  }
+  20% {
+    transform: translate(0px, 1.5px) rotate(10deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0px, 2.5px) rotate(10deg);
+  }
+  50% {
+    transform: translate(0px, 3px) rotate(-10deg);
+  }
+  60% {
+    transform: translate(0px, 2.5px) rotate(0deg);
+  }
+  70% {
+    transform: translate(0px, 2px) rotate(-10deg);
+  }
+  80% {
+    transform: translate(0px, 1.5px) rotate(10deg);
+  }
+  90% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(-10deg);
+    color: var(--lilac);
+  }
+}
+
+#nav-screen__column .fa-headphones {
+  color: var(--gray);
+  cursor: pointer;
+}
+#nav-screen__column .fa-headphones:hover {
+  will-change: transform;
+  animation: shakeHeadphone 1s linear infinite;
+}
+
+@keyframes rotatePalette {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotate(180deg);
+    color: var(--lilac);
+  }
+}
+
+#nav-screen__column .fa-palette {
+  color: var(--gray);
+  cursor: pointer;
+}
+
+#nav-screen__column .fa-palette:hover {
+  animation: rotatePalette 1s linear forwards;
+}
+
+#paint-button {
+  background-color: transparent;
+  border: none;
+}
+
+#paint-button:active {
+  transform: scale(0.9);
+}
+
+#bgm-button {
+  background-color: transparent;
+  border: none;
+}
+
+#bgm-button:active {
+  transform: scale(0.9);
+}
+
+#preview-stockmarket {
+  width: 300px;
+  height: 500px;
+}
+
+#bgmusic i {
+  color: white;
+}
+#bgmusic-cover {
+  position: absolute;
+  width: 300px;
+  height: 430px;
+  left: 25px;
+  bottom: 80px;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#bgmusic-title {
+  color: white;
+  margin-bottom: 10px;
+}
+
+#bgmusic-content {
+  display: flex;
+  padding: 10px;
+  overflow-x: scroll;
+}
+
+#bgmusic-content iframe {
+  margin-right: 5px;
+}
+
+#bgmusic-row {
+  margin-bottom: 25px;
+}
+
+#quote {
+  color: var(--gray);
+}
