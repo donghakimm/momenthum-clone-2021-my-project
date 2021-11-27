@@ -13,7 +13,7 @@ const images = [
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
 document.body.style.background = `url(img/background/${chosenImage}) no-repeat`;
-document.body.style.backgroundSize = "115%";
+document.body.style.backgroundSize = "110%";
 
 
 
